@@ -1,0 +1,109 @@
+{
+  "disasters": [
+    {
+      "id": "d001",
+      "type": "flood",
+      "location": "Kerala, India",
+      "coordinates": [9.9312, 76.2673],
+      "intensity": 0.9,
+      "description": "Heavy monsoon rains causing rivers to overflow in Kochi and surrounding districts",
+      "severity": "critical",
+      "status": "active",
+      "affectedPopulation": 125000,
+      "reportedAt": "2024-01-15T08:30:00Z"
+    },
+    {
+      "id": "d002",
+      "type": "cyclone",
+      "location": "Odisha Coast, India",
+      "coordinates": [20.9517, 85.0985],
+      "intensity": 0.8,
+      "description": "Cyclone approaching eastern coastline with winds up to 150 km/h",
+      "severity": "critical",
+      "status": "approaching",
+      "affectedPopulation": 85000,
+      "reportedAt": "2024-01-14T14:20:00Z"
+    },
+    {
+      "id": "d003",
+      "type": "earthquake",
+      "location": "Uttarakhand, India",
+      "coordinates": [30.0668, 79.0193],
+      "intensity": 0.6,
+      "description": "5.2 magnitude earthquake near Dehradun causing building damage",
+      "severity": "high",
+      "status": "monitoring",
+      "affectedPopulation": 45000,
+      "reportedAt": "2024-01-13T22:15:00Z"
+    },
+    {
+      "id": "d004",
+      "type": "drought",
+      "location": "Maharashtra, India",
+      "coordinates": [19.7515, 75.7139],
+      "intensity": 0.7,
+      "description": "Severe drought conditions affecting agricultural districts in Marathwada region",
+      "severity": "high",
+      "status": "active",
+      "affectedPopulation": 320000,
+      "reportedAt": "2024-01-12T10:45:00Z"
+    },
+    {
+      "id": "d005",
+      "type": "landslide",
+      "location": "Himachal Pradesh, India",
+      "coordinates": [31.1048, 77.1734],
+      "intensity": 0.5,
+      "description": "Heavy rainfall triggering landslides blocking major highways near Shimla",
+      "severity": "moderate",
+      "status": "active",
+      "affectedPopulation": 8500,
+      "reportedAt": "2024-01-11T16:30:00Z"
+    },
+    {
+      "id": "d006",
+      "type": "heatwave",
+      "location": "Rajasthan, India",
+      "coordinates": [27.0238, 74.2179],
+      "intensity": 0.8,
+      "description": "Extreme temperatures exceeding 48°C affecting desert regions",
+      "severity": "high",
+      "status": "monitoring",
+      "affectedPopulation": 95000,
+      "reportedAt": "2024-01-10T12:00:00Z"
+    },
+    {
+      "id": "d007",
+      "type": "flood",
+      "location": "West Bengal, India",
+      "coordinates": [22.5726, 88.3639],
+      "intensity": 0.6,
+      "description": "Urban flooding in Kolkata due to heavy monsoon and poor drainage",
+      "severity": "moderate",
+      "status": "active",
+      "affectedPopulation": 67000,
+      "reportedAt": "2024-01-09T07:20:00Z"
+    },
+    {
+      "id": "d008",
+      "type": "forest_fire",
+      "location": "Uttarakhand, India",
+      "coordinates": [30.0668, 79.0193],
+      "intensity": 0.4,
+      "description": "Forest fires spreading in hill stations affecting tourist areas",
+      "severity": "moderate",
+      "status": "monitoring",
+      "affectedPopulation": 12000,
+      "reportedAt": "2024-01-08T18:45:00Z"
+    }
+  ],
+  "disasterTypes": [
+    { "id": "flood", "label": "Floods", "color": "#3B82F6" },
+    { "id": "cyclone", "label": "Cyclones", "color": "#8B5CF6" },
+    { "id": "earthquake", "label": "Earthquakes", "color": "#EF4444" },
+    { "id": "drought", "label": "Droughts", "color": "#F59E0B" },
+    { "id": "landslide", "label": "Landslides", "color": "#10B981" },
+    { "id": "heatwave", "label": "Heat Waves", "color": "#F97316" },
+    { "id": "forest_fire", "label": "Forest Fires", "color": "#DC2626" }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Dr. Priya Sharma",
+      "role": "Project Lead & Emergency Response Specialist",
+      "description": "Former NDMA official with 15+ years in disaster management. Leading RAPID's strategic development and emergency protocols.",
+      "image": "/placeholder.svg",
+      "expertise": ["Disaster Management", "Policy Development", "Emergency Coordination"]
+    },
+    {
+      "id": 2,
+      "name": "Arjun Patel",
+      "role": "Technical Architect & AI Developer",
+      "description": "Full-stack developer specializing in real-time systems and machine learning. Building RAPID's core platform and AI features.",
+      "image": "/placeholder.svg",
+      "expertise": ["React/Node.js", "Machine Learning", "Real-time Systems"]
+    },
+    {
+      "id": 3,
+      "name": "Dr. Kavitha Reddy",
+      "role": "Public Health Data Scientist",
+      "description": "Epidemiologist focused on disease outbreak detection and health surveillance systems for disaster-affected communities.",
+      "image": "/placeholder.svg",
+      "expertise": ["Epidemiology", "Data Analysis", "Health Surveillance"]
+    },
+    {
+      "id": 4,
+      "name": "Rohit Gupta",
+      "role": "GIS & Mapping Specialist",
+      "description": "Geospatial analyst developing interactive mapping solutions and location-based services for emergency response.",
+      "image": "/placeholder.svg",
+      "expertise": ["GIS Mapping", "Geospatial Analysis", "Remote Sensing"]
+    },
+    {
+      "id": 5,
+      "name": "Meera Singh",
+      "role": "Communication Systems Engineer",
+      "description": "Building offline-capable communication solutions including SMS, satellite, and mesh networking for disaster zones.",
+      "image": "/placeholder.svg",
+      "expertise": ["Telecommunications", "Mesh Networks", "Satellite Communications"]
+    },
+    {
+      "id": 6,
+      "name": "Vikram Joshi",
+      "role": "Community Outreach Coordinator",
+      "description": "Connecting with NGOs, local governments, and communities to ensure RAPID meets real-world emergency response needs.",
+      "image": "/placeholder.svg",
+      "expertise": ["Community Engagement", "Stakeholder Management", "Training & Support"]
+    }
+  ]
+}
