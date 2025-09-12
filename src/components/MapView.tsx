@@ -20,7 +20,8 @@ const DefaultIcon = L.icon({
 (L.Marker.prototype as any).options.icon = DefaultIcon;
 
 interface MapViewProps {
-  center?: [number, number];                 // [lng, lat]
+  /** Accepts either [lng, lat] or [lat, lng] — we normalize internally */
+  center?: [number, number];
   zoom?: number;
   markers?: Array<{
     id: string;
@@ -36,7 +37,7 @@ interface MapViewProps {
 }
 
 export const MapView: React.FC<MapViewProps> = ({
-  center = [78.9629, 20.5937], // India [lng, lat]
+  center = [78.9629, 20.5937], // India as [lng, lat] (we normalize below)
   zoom = 5,
   markers = [],
   heatmapData = [],
@@ -57,7 +58,20 @@ export const MapView: React.FC<MapViewProps> = ({
   // Demo heatmap data (generated once)
   const demoHeatRef = useRef<Array<[number, number, number]>>([]);
 
-  // ---------- Utilities
+  // ---------- Helpers
+
+  // Normalize incoming center to [lat, lng]
+  const toLatLng = (c: [number, number]): [number, number] => {
+    const [a, b] = c;
+    // Heuristic: if first looks like longitude (|x|>60) and second like latitude (|y|<=60),
+    // treat as [lng, lat] and flip. Else assume [lat, lng].
+    if (Math.abs(a) > 60 && Math.abs(b) <= 60) return [b, a];
+    return [a, b];
+  };
+
+  // Optional: keep map within India-ish bounds (with padding)
+  const INDIA_BOUNDS = L.latLngBounds([[6, 68], [36, 98]]);
+
   const withViewLock = (fn: () => void) => {
     if (!mapRef.current) return;
     const c = mapRef.current.getCenter();
@@ -141,10 +155,14 @@ export const MapView: React.FC<MapViewProps> = ({
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
 
+    const latLng = toLatLng(center);
+
     const map = L.map(mapContainer.current, {
       zoomControl: true,
       attributionControl: true,
-    }).setView([center[1], center[0]], zoom);
+      maxBounds: INDIA_BOUNDS.pad(0.25),   // optional: keep focus on India
+      maxBoundsViscosity: 0.8,             // optional: snap back when panned out
+    }).setView(latLng, zoom);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
@@ -178,7 +196,8 @@ export const MapView: React.FC<MapViewProps> = ({
   // external center/zoom updates
   useEffect(() => {
     if (mapRef.current) {
-      mapRef.current.setView([center[1], center[0]], zoom, { animate: false });
+      const latLng = toLatLng(center);
+      mapRef.current.setView(latLng, zoom, { animate: false });
     }
   }, [center, zoom]);
 
