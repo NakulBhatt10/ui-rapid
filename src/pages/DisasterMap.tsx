@@ -14,7 +14,6 @@ export const DisasterMap = () => {
   const [showPopulationDensity, setShowPopulationDensity] = useState<boolean>(false);
   const [showEvacuationRoutes, setShowEvacuationRoutes] = useState<boolean>(false);
 
-  // TODO: Integrate NASA API or disaster data API
   const disasters = disastersData.disasters;
   const disasterTypes = disastersData.disasterTypes;
 
@@ -24,7 +23,6 @@ export const DisasterMap = () => {
     return typeMatch && severityMatch;
   });
 
-  // Prepare data for map components
   const mapMarkers = filteredDisasters.map(disaster => ({
     id: disaster.id,
     position: disaster.coordinates as [number, number],
@@ -70,7 +68,6 @@ export const DisasterMap = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Filters Sidebar */}
           <div className="space-y-6">
             <Card>
               <CardHeader>
@@ -138,9 +135,7 @@ export const DisasterMap = () => {
             />
           </div>
 
-          {/* Map and Results */}
           <div className="lg:col-span-3 space-y-6">
-            {/* Interactive Map */}
             <Card>
               <CardContent className="p-0">
                 <MapView
@@ -156,7 +151,6 @@ export const DisasterMap = () => {
               </CardContent>
             </Card>
 
-            {/* Disaster List */}
             <Card>
               <CardHeader>
                 <CardTitle>

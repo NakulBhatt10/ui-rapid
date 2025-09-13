@@ -82,7 +82,6 @@ export const Communication = () => {
           </p>
         </div>
 
-        {/* Emergency Alert */}
         <div className="mb-8">
           <Card className="border-warning bg-warning/5">
             <CardContent className="pt-6">
@@ -110,7 +109,6 @@ export const Communication = () => {
           </Card>
         </div>
 
-        {/* Communication Methods Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {communicationMethods.map((method) => {
             const IconComponent = method.icon;
@@ -175,7 +173,6 @@ export const Communication = () => {
           })}
         </div>
 
-        {/* Emergency Protocols */}
         <Card>
           <CardHeader>
             <CardTitle>Emergency Communication Protocols</CardTitle>
@@ -224,7 +221,6 @@ export const Communication = () => {
           </CardContent>
         </Card>
 
-        {/* TODO Integration Notes */}
         <div className="mt-8 bg-muted/50 rounded-lg p-6">
           <h3 className="font-semibold text-foreground mb-3">
             Integration Roadmap

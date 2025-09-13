@@ -20,7 +20,6 @@ export const Profile = () => {
   const handleSave = () => {
     setUserInfo(editedInfo);
     setIsEditing(false);
-    // TODO: Connect to user database/authentication
   };
 
   const handleCancel = () => {
@@ -29,7 +28,6 @@ export const Profile = () => {
   };
 
   const handleLogout = () => {
-    // TODO: Connect to authentication system
     console.log("Logging out...");
   };
 
@@ -37,7 +35,6 @@ export const Profile = () => {
     <div className="min-h-screen bg-muted/30">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
-          {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-2">
               User Profile
@@ -47,7 +44,6 @@ export const Profile = () => {
             </p>
           </div>
 
-          {/* Profile Card */}
           <Card className="mb-6">
             <CardHeader>
               <div className="flex justify-between items-center">
@@ -86,7 +82,6 @@ export const Profile = () => {
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Avatar Section */}
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 rounded-full h-20 w-20 flex items-center justify-center">
                   <User className="h-10 w-10 text-primary" />
@@ -101,7 +96,6 @@ export const Profile = () => {
                 </div>
               </div>
 
-              {/* Form Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
@@ -185,7 +179,6 @@ export const Profile = () => {
             </CardContent>
           </Card>
 
-          {/* Account Actions */}
           <Card>
             <CardHeader>
               <CardTitle>Account Actions</CardTitle>

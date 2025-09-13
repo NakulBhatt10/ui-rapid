@@ -50,7 +50,6 @@ export const AboutUs = () => {
   return (
     <div className="min-h-screen bg-muted/30">
       <div className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             <Shield className="h-16 w-16 text-primary" />
@@ -65,7 +64,6 @@ export const AboutUs = () => {
           </p>
         </div>
 
-        {/* Mission Statement */}
         <Card className="mb-12">
           <CardContent className="pt-8">
             <div className="text-center">
@@ -81,7 +79,6 @@ export const AboutUs = () => {
           </CardContent>
         </Card>
 
-        {/* Team Section */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-center text-foreground mb-8">
             Our Team
@@ -125,7 +122,6 @@ export const AboutUs = () => {
           </div>
         </div>
 
-        {/* Key Features */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-center text-foreground mb-8">
             Platform Capabilities
@@ -154,7 +150,6 @@ export const AboutUs = () => {
           </div>
         </div>
 
-        {/* Goals & Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <Card>
             <CardHeader>
@@ -210,7 +205,6 @@ export const AboutUs = () => {
           </Card>
         </div>
 
-        {/* Contact & Collaboration */}
         <Card className="text-center">
           <CardContent className="pt-8">
             <h2 className="text-2xl font-bold text-foreground mb-4">

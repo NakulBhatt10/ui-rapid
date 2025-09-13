@@ -12,12 +12,11 @@ const SOSButton = () => {
 
   const triggerSOS = async () => {
     setIsActivating(false);
-    // Add your SOS logic here
     alert('Emergency SOS activated! Contacting authorities...');
   };
 
   const longPressProps = useLongPress(triggerSOS, {
-    threshold: 2000, // 2 seconds
+    threshold: 2000,
     onStart: () => setIsActivating(true),
     onCancel: () => setIsActivating(false)
   });
@@ -75,7 +74,6 @@ const SOSButton = () => {
 };
 
 export const Dashboard = () => {
-  // TODO: Connect real-time alerts API here
   const activeDisasters = disastersData.disasters.filter(d => d.status === "active");
   const criticalDisasters = activeDisasters.filter(d => d.severity === "critical");
   const availableAccommodations = accommodationsData.accommodations.filter(a => a.availability === "available");
@@ -83,7 +81,6 @@ export const Dashboard = () => {
   return (
     <div className="min-h-screen bg-muted/30">
       <div className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">
             RAPID Dashboard
@@ -96,12 +93,10 @@ export const Dashboard = () => {
           </p>
         </div>
 
-        {/* SOS Button */}
         <div className="flex justify-center my-12">
           <SOSButton />
         </div>
 
-        {/* Critical Alerts */}
         {criticalDisasters.length > 0 && (
           <div className="mb-8">
             <div className="bg-gradient-alert rounded-lg p-6 shadow-alert">
@@ -135,19 +130,16 @@ export const Dashboard = () => {
           </div>
         )}
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                Active Disasters
               </CardTitle>
               <AlertTriangle className="h-4 w-4 text-warning" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-foreground">{activeDisasters.length}</div>
               <p className="text-xs text-muted-foreground">
-                +2 from yesterday
               </p>
             </CardContent>
           </Card>
@@ -155,7 +147,6 @@ export const Dashboard = () => {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                People Affected
               </CardTitle>
               <Users className="h-4 w-4 text-primary" />
             </CardHeader>
@@ -164,7 +155,6 @@ export const Dashboard = () => {
                 {activeDisasters.reduce((sum, d) => sum + d.affectedPopulation, 0).toLocaleString()}
               </div>
               <p className="text-xs text-muted-foreground">
-                Across all active disasters
               </p>
             </CardContent>
           </Card>
@@ -172,14 +162,12 @@ export const Dashboard = () => {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                Available Shelters
               </CardTitle>
               <MapPin className="h-4 w-4 text-success" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-foreground">{availableAccommodations.length}</div>
               <p className="text-xs text-muted-foreground">
-                Ready to accept evacuees
               </p>
             </CardContent>
           </Card>
@@ -200,7 +188,6 @@ export const Dashboard = () => {
           </Card>
         </div>
 
-        {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>

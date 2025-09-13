@@ -21,11 +21,9 @@ export const DiseaseReports = () => {
   const [location, setLocation] = useState("");
   const [potentialMatches, setPotentialMatches] = useState<any[]>([]);
 
-  // TODO: Integrate agentic AI web search
   const diseases = diseasesData.diseases;
   const symptoms = diseasesData.symptoms;
 
-  // Prepare map data
   const diseaseMarkers = diseases.slice(0, 10).map(disease => ({
     id: disease.id,
     position: disease.coordinates as [number, number],
@@ -39,7 +37,6 @@ export const DiseaseReports = () => {
     disease.severity === 'high' ? 0.8 : disease.severity === 'medium' ? 0.5 : 0.3
   ]);
   
-  // Dummy disease reports for India
   const diseaseReports = [
     {
       id: "dr001",
@@ -79,8 +76,6 @@ export const DiseaseReports = () => {
   };
 
   const handleSubmitSymptoms = () => {
-    // TODO: Connect to AI/disease matching API
-    // Dummy results for demonstration
     const dummyMatches = [
       {
         disease: "Influenza",
@@ -146,7 +141,6 @@ export const DiseaseReports = () => {
                       Detect
                     </Button>
                   </div>
-                  {/* TODO: Connect location validation at signup */}
                   <p className="text-xs text-muted-foreground mt-1">
                     Location will help health authorities track outbreaks
                   </p>
@@ -190,7 +184,6 @@ export const DiseaseReports = () => {
               </CardContent>
             </Card>
 
-            {/* Potential Matches */}
             {potentialMatches.length > 0 && (
               <Card>
                 <CardHeader>

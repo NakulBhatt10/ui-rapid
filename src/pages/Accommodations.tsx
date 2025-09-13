@@ -31,7 +31,6 @@ export const Accommodations = () => {
     acc.name.toLowerCase().includes(searchLocation.toLowerCase())
   );
 
-  // Prepare map markers
   const accommodationMarkers = filteredAccommodations.slice(0, 20).map(accommodation => ({
     id: accommodation.id,
     position: accommodation.coordinates as [number, number],
@@ -59,7 +58,6 @@ export const Accommodations = () => {
 
   const handleOrgSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to accommodation database/API
     console.log("Organization form submitted");
     setShowOrgForm(false);
   };
